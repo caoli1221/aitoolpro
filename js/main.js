@@ -22,12 +22,12 @@ document.addEventListener('DOMContentLoaded', async () => {
   ];
 
   const articles = [
-    { title: 'ChatGPT完全入门指南：从注册到精通', excerpt: '手把手教你注册和使用ChatGPT，包含10个实用技巧...', date: '2026-07-25', category: 'AI写作', image: '' },
-    { title: 'Midjourney提示词大全：100个高质量prompt', excerpt: '整理100个实测好用的Midjourney提示词，涵盖各种风格...', date: '2026-07-22', category: 'AI绘画', image: '' },
-    { title: '免费AI工具大盘点：不花一分钱也能用AI', excerpt: '10款完全免费的AI工具推荐，涵盖写作、绘画、视频...', date: '2026-07-20', category: '综合', image: '' },
-    { title: 'AI视频生成哪家强？Runway vs Pika实测对比', excerpt: '实测对比主流AI视频生成工具，告诉你哪个更适合你...', date: '2026-07-18', category: 'AI视频', image: '' },
-    { title: '用AI写公众号爆文：实操全流程拆解', excerpt: '从选题到发布，完整AI辅助写作流程，提高10倍效率...', date: '2026-07-15', category: 'AI写作', image: '' },
-    { title: 'Notion AI深度测评：值不值得每月多花70元？', excerpt: '详细体验Notion AI的所有功能，告诉你是否值得付费...', date: '2026-07-12', category: 'AI写作', image: '' }
+    { slug: 'chatgpt-guide', title: 'ChatGPT完全入门指南：从注册到精通', excerpt: '手把手教你注册和使用ChatGPT，包含10个实用技巧...', date: '2026-07-25', category: 'AI写作', image: '' },
+    { slug: 'midjourney-prompts', title: 'Midjourney提示词大全：100个高质量prompt', excerpt: '整理100个实测好用的Midjourney提示词，涵盖各种风格...', date: '2026-07-22', category: 'AI绘画', image: '' },
+    { slug: 'free-ai-tools', title: '免费AI工具大盘点：不花一分钱也能用AI', excerpt: '10款完全免费的AI工具推荐，涵盖写作、绘画、视频...', date: '2026-07-20', category: '综合', image: '' },
+    { slug: 'ai-video-compare', title: 'AI视频生成哪家强？Runway vs Pika实测对比', excerpt: '实测对比主流AI视频生成工具，告诉你哪个更适合你...', date: '2026-07-18', category: 'AI视频', image: '' },
+    { slug: 'ai-write-guide', title: '用AI写公众号爆文：实操全流程拆解', excerpt: '从选题到发布，完整AI辅助写作流程，提高10倍效率...', date: '2026-07-15', category: 'AI写作', image: '' },
+    { slug: 'notion-ai-review', title: 'Notion AI深度测评：值不值得每月多花70元？', excerpt: '详细体验Notion AI的所有功能，告诉你是否值得付费...', date: '2026-07-12', category: 'AI写作', image: '' }
   ];
 
   categories.forEach(cat => {
@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', async () => {
           <p class="text-sm text-gray-500 mb-4">${article.excerpt}</p>
           <div class="flex items-center justify-between">
             <span class="text-xs text-gray-400">${article.date}</span>
-            <a href="pages/article.html" class="text-purple-600 text-sm font-medium hover:text-purple-800">阅读全文 →</a>
+            <a href="pages/article.html?slug=${article.slug}" class="text-purple-600 text-sm font-medium hover:text-purple-800">阅读全文 →</a>
           </div>
         </div>
       </div>
