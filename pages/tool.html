@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>工具详情 - AI创作工具导航</title>
+  <meta name="description" content="查看AI工具的详细信息、功能特点、价格和使用体验。">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap');
+    * { font-family: 'Noto Sans SC', 'Inter', sans-serif; }
+    .gradient-text { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .btn-primary { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); transition: opacity 0.2s; }
+    .btn-primary:hover { opacity: 0.9; }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-900">
+  <nav class="bg-white shadow-sm sticky top-0 z-50">
+    <div class="max-w-4xl mx-auto px-4 py-4 flex items-center justify-between">
+      <a href="/" class="text-xl font-bold gradient-text">AI创作工具导航</a>
+      <a href="/" class="text-sm text-gray-600 hover:text-purple-600">← 返回首页</a>
+    </div>
+  </nav>
+
+  <main class="max-w-4xl mx-auto px-4 py-12" id="toolDetail">
+    <div class="text-center py-20 text-gray-400">加载中...</div>
+  </main>
+
+  <footer class="bg-gray-900 text-gray-400 py-8 mt-16">
+    <div class="max-w-4xl mx-auto px-4 text-center text-sm">
+      <p>&copy; 2026 AI创作工具导航 | 部分链接为推广链接</p>
+    </div>
+  </footer>
+
+  <script>
+    const toolData = {
+      chatgpt: { name: 'ChatGPT', icon: '💬', category: 'AI写作', description: 'OpenAI 推出的对话式 AI 助手，支持写作、编程、翻译、分析等多种任务。是目前全球用户量最大的 AI 工具，月活用户超过 2 亿。', features: ['自然语言对话，上下文理解能力强', '代码生成与调试，支持几乎所有编程语言', '文档分析与总结，支持上传PDF/Word等文件', '多语言翻译，中文表现优秀', '创意写作：小说、诗歌、剧本、广告文案'], pricing: '免费版：GPT-3.5 模型 | Plus：$20/月 (GPT-4) | Team：$25/人/月 | Enterprise：按需定价', pros: ['功能强大全面，几乎无所不能', '中文支持好，能达到母语水平', '插件生态丰富，可扩展性强', '更新迭代快，功能持续增强'], cons: ['高峰期响应速度较慢', '免费版功能限制较多', '需要科学上网才能访问'], rating: 4.9, url: 'https://chat.openai.com', affiliateUrl: '', review: '作为目前最强大的对话式AI，ChatGPT 几乎可以胜任任何文字相关的任务。从日常写作到复杂编程，它都能给出令人满意的结果。尤其是 GPT-4 模型，在逻辑推理和创意表达方面远超其他同类产品。如果你只打算用一款AI工具，ChatGPT 是最佳选择。但需要注意的是，免费版使用的是 GPT-3.5 模型，能力有限；要想真正发挥它的实力，建议订阅 Plus 版本。' },
+      midjourney: { name: 'Midjourney', icon: '🎨', category: 'AI绘画', description: '目前效果最好的 AI 图像生成工具，通过文字描述即可生成高质量的艺术作品和设计图。以其独特的艺术风格和极高的画质著称。', features: ['文字生成高分辨率图像', '图��风格变换与融合', '高清放大（最高可达 4096x4096）', '多种艺术风格预设', '图生图功能，可基于参考图创作'], pricing: 'Basic：$10/月（约200张图）| Standard：$30/月（无限生成）| Pro：$60/月（隐私模式+高速）| Mega：$120/月', pros: ['图像质量顶级，细节丰富', '艺术风格独特，极具美感', '社区活跃，灵感源源不断', '持续更新，新功能不断'], cons: ['需要通过 Discord 使用，操作略复杂', '学习曲线较陡，提示词需要技巧', '不可本地部署，依赖网络'], rating: 4.8, url: 'https://www.midjourney.com', affiliateUrl: '', review: 'Midjourney 是目前公认画质最好的 AI 绘画工具。它生成的图像具有独特的艺术美感，无论是概念设计、插画还是摄影风格的作品，都能达到专业水准。V6 版本在真实感方面有了质的飞跃。不过，它需要通过 Discord 操作，对新手不太友好。建议先学习一些基本的提示词技巧，才能充分发挥它的能力。' },
+      claude: { name: 'Claude', icon: '🤖', category: 'AI写作', description: 'Anthropic 开发的安全对话 AI，擅长长文本处理和分析。支持 200K token 的上下文窗口，一次可以处理整本书的内容。', features: ['超长文本处理（200K token）', '代码分析与生成', '文档总结与问答', '安全对话，价值观对齐', '支持文件上传分析'], pricing: '免费版：Sonnet 模型 | Pro：$20/月 (Opus模型) | Team：$25/人/月 | Enterprise：按需', pros: ['长文本处理能力极强', '输出安全性高，不易产生有害内容', '逻辑清晰，思维链可读性好', '对中文的支持持续改善'], cons: ['部分地区需要 VPN', '创意性相对较弱（安全限制导致）', '功能生态不如 ChatGPT 丰富'], rating: 4.7, url: 'https://claude.ai', affiliateUrl: '', review: 'Claude 的最大优势是超长的上下文窗口和出色的安全性。如果你需要分析长篇文档、整本书籍或者大量代码，Claude 是最佳选择。它的回答风格更加谨慎和深思熟虑，在某些需要严谨性的场景下比 ChatGPT 更可靠。虽然创意性稍弱，但在专业分析、学术研究和代码审查方面表现突出。' },
+      runway: { name: 'Runway', icon: '🎬', category: 'AI视频', description: 'AI 视频生成与编辑平台，支持文生视频、图生视频、视频风格转换等多种功能。是好莱坞也在使用的专业级工具。', features: ['Gen-3 文生视频', '视频风格迁移', '绿幕智能抠像', '运动追踪', '视频修复与增强'], pricing: 'Basic：免费（有限额度）| Standard：$15/月 | Pro：$35/月 | Unlimited：$95/月', pros: ['视频生成质量高', '功能丰富，覆盖视频制作全流程', '界面友好，新手也能上手', '持续推出新功能'], cons: ['视频生成时间较长', '免费版有清晰水印', '复杂场景效果不稳定'], rating: 4.5, url: 'https://runwayml.com', affiliateUrl: '', review: 'Runway 是 AI 视频领域的领导者。它的 Gen-3 模型在视频生成质量上有显著提升，尤其是在人物动作和光影处理方面。除了视频生成，它的视频编辑功能也非常实用，比如智能抠像、运动追踪等。不过，AI 视频生成目前整体还处于早期阶段，偶尔会出现不自然的结果，适合作为创意辅助工具而非完全替代传统视频制作。' },
+      suno: { name: 'Suno', icon: '🎵', category: 'AI音频', description: 'AI 音乐生成工具，只需输入歌词和音乐风格，即可一键创作完整的歌曲。无论是流行、摇滚还是电子音乐。', features: ['文本生成歌曲', '多种音乐风格', '自定义歌词', '高质量音频输出', '人声合成'], pricing: 'Basic：免费（每天5首）| Pro：$10/月 | Premier：$30/月', pros: ['操作简单，一键生成', '音乐质量超预期', '风格多样', '免费额度够用'], cons: ['中文歌曲表现一般', '无法精确控制细节', '生成结果随机性大'], rating: 4.6, url: 'https://suno.ai', affiliateUrl: '', review: 'Suno 是 AI 音乐生成领域的现象级产品。你只需要输入歌词和风格描述，它就能在几十秒内生出一首完整的歌曲。v4 版本的音质和人声表现力都有大幅提升，甚至有人用 Suno 创作的歌曲登上了音乐榜单。对于内容创作者来说，它是获取免版权背景音乐的绝佳工具。' },
+      stableDiffusion: { name: 'Stable Diffusion', icon: '🖼️', category: 'AI绘画', description: '开源 AI 图像生成模型，可本地部署完全免费。社区生态极其丰富，有海量模型和插件。', features: ['文生图', '图生图', '局部重绘 (Inpainting)', 'ControlNet 精准控制', '模型自由切换'], pricing: '完全免费（开源）', pros: ['完全免费无限制', '可本地部署，保护隐私', '模型和插件选择极多', '可控性强，适合专业用户'], cons: ['需要一定技术基础', '对显卡要求高（推荐8G+显存）', '界面不如商业产品友好'], rating: 4.6, url: 'https://stability.ai', affiliateUrl: '', review: 'Stable Diffusion 是开源 AI 绘画的王者。与 Midjourney 不同，它可以完全在本地运行，没有内容限制，也不需要付费。通过 ControlNet 等插件，你可以对生成过程进行极其精细的控制。社区贡献的海量模型和 LoRA，让你几乎可以生成任何风格的图像。不过，它的上手门槛较高，需要一台好显卡和一定的技术知识。' },
+      gemini: { name: 'Gemini', icon: '🌟', category: 'AI写作', description: 'Google 推出的多模态 AI 模型，支持文本、图像、音频、视频等多种输入方式。与 Google 生态深度集成。', features: ['多模态理解（文本/图片/音频/视频）', '100万 token 超长上下文', '代码能力出色', '与 Google 生态无缝集成', '实时信息搜索'], pricing: '免费版可用 | Advanced：$19.99/月（含2TB云存储）', pros: ['多模态能力业界领先', '免费额度慷慨', '与 Gmail/Docs 等集成', '响应速度快'], cons: ['部分地区限制访问', '中文回答偶尔不够自然', '功能不如 ChatGPT 全面'], rating: 4.5, url: 'https://gemini.google.com', affiliateUrl: '', review: 'Gemini 的多模态能力是其最大亮点。它不仅能理解文字，还能分析图片、听懂音频、看懂视频。100万 token 的上下文窗口意味着你可以上传一整部电影让它分析。如果你已经在使用 Google 生态（Gmail、Docs、Drive），Gemini 的集成体验会非常好。不过在纯中文场景下，它的表现偶尔不如国产大模型自然。' }
+    };
+
+    const params = new URLSearchParams(window.location.search);
+    const toolId = params.get('id') || 'chatgpt';
+    const tool = toolData[toolId] || toolData['chatgpt'];
+
+    function renderStars(rating) {
+      const full = Math.floor(rating);
+      const half = rating % 1 >= 0.5;
+      let stars = '';
+      for (let i = 0; i < full; i++) stars += '★';
+      if (half) stars += '☆';
+      return `<span class="text-yellow-400 text-lg">${stars}</span><span class="text-gray-600 ml-2 font-semibold">${rating}/5.0</span>`;
+    }
+
+    document.title = `${tool.name} - ${tool.category}工具测评 | AI创作工具导航`;
+    document.getElementById('toolDetail').innerHTML = `
+      <div class="mb-8">
+        <a href="/" class="text-purple-600 text-sm hover:text-purple-800">← 返回首页</a>
+        <span class="text-gray-300 mx-2">/</span>
+        <span class="text-sm text-gray-500">${tool.category}</span>
+      </div>
+      <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
+        <div class="flex items-start gap-4 mb-6">
+          <div class="text-5xl">${tool.icon}</div>
+          <div>
+            <h1 class="text-3xl font-bold mb-1">${tool.name}</h1>
+            <div class="flex items-center gap-3">
+              <span class="text-xs font-medium bg-purple-50 text-purple-600 px-2 py-1 rounded">${tool.category}</span>
+              ${renderStars(tool.rating)}
+            </div>
+          </div>
+        </div>
+        <p class="text-lg text-gray-600 mb-8 leading-relaxed">${tool.description}</p>
+        <div class="flex flex-wrap gap-3 mb-8">
+          <a href="${tool.url}" target="_blank" rel="nofollow" class="btn-primary text-white px-6 py-3 rounded-full font-medium">访问官网</a>
+        </div>
+
+        <div class="prose max-w-none">
+          <h2 class="text-xl font-bold mb-4">核心功能</h2>
+          <ul class="space-y-2 mb-8">
+            ${tool.features.map(f => `<li class="flex items-start gap-2"><span class="text-purple-500 mt-1">▸</span><span class="text-gray-700">${f}</span></li>`).join('')}
+          </ul>
+
+          <h2 class="text-xl font-bold mb-4">价格方案</h2>
+          <p class="text-gray-700 mb-8">${tool.pricing}</p>
+
+          <h2 class="text-xl font-bold mb-4">使用体验</h2>
+          <p class="text-gray-700 leading-relaxed mb-8">${tool.review}</p>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="bg-green-50 rounded-xl p-6">
+              <h3 class="font-semibold text-green-800 mb-3">优点</h3>
+              <ul class="space-y-2">
+                ${tool.pros.map(p => `<li class="flex items-start gap-2 text-green-700"><span>✓</span><span>${p}</span></li>`).join('')}
+              </ul>
+            </div>
+            <div class="bg-red-50 rounded-xl p-6">
+              <h3 class="font-semibold text-red-800 mb-3">缺点</h3>
+              <ul class="space-y-2">
+                ${tool.cons.map(c => `<li class="flex items-start gap-2 text-red-700"><span>✗</span><span>${c}</span></li>`).join('')}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    `;
+  </script>
+</body>
+</html>
