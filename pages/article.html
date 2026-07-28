@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>文章 - AI创作工具导航</title>
+  <meta name="description" content="AI工具使用教程和深度测评">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap');
+    * { font-family: 'Noto Sans SC', 'Inter', sans-serif; }
+    .gradient-text { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .btn-primary { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); transition: opacity 0.2s; }
+    .btn-primary:hover { opacity: 0.9; }
+    article h2 { font-size: 1.5rem; font-weight: 700; margin-top: 2rem; margin-bottom: 0.75rem; color: #1a1a2e; }
+    article h3 { font-size: 1.2rem; font-weight: 600; margin-top: 1.5rem; margin-bottom: 0.5rem; }
+    article p { margin-bottom: 1rem; line-height: 1.85; color: #333; }
+    article ul, article ol { margin-bottom: 1rem; padding-left: 1.5rem; }
+    article li { margin-bottom: 0.5rem; line-height: 1.75; }
+    article a { color: #7c3aed; text-decoration: underline; }
+    article blockquote { border-left: 4px solid #7c3aed; background: #f5f3ff; padding: 1rem 1.5rem; margin: 1.5rem 0; border-radius: 0 8px 8px 0; font-style: italic; }
+    article .tip { background: #f0fdf4; border-left: 4px solid #22c55e; padding: 1rem 1.5rem; margin: 1.5rem 0; border-radius: 0 8px 8px 0; }
+    article .warn { background: #fef3c7; border-left: 4px solid #f59e0b; padding: 1rem 1.5rem; margin: 1.5rem 0; border-radius: 0 8px 8px 0; }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-900">
+  <nav class="bg-white shadow-sm sticky top-0 z-50">
+    <div class="max-w-4xl mx-auto px-4 py-4 flex items-center justify-between">
+      <a href="/" class="text-xl font-bold gradient-text">AI创作工具导航</a>
+      <a href="/" class="text-sm text-gray-500 hover:text-purple-600">← 返回首页</a>
+    </div>
+  </nav>
+
+  <main class="max-w-4xl mx-auto px-4 py-10">
+    <article id="articleContent" class="bg-white rounded-2xl shadow-sm p-8 md:p-12">
+      <div class="animate-pulse">
+        <div class="h-8 bg-gray-200 rounded w-3/4 mb-4"></div>
+        <div class="h-4 bg-gray-200 rounded w-1/4 mb-8"></div>
+        <div class="h-4 bg-gray-200 rounded w-full mb-3"></div>
+        <div class="h-4 bg-gray-200 rounded w-full mb-3"></div>
+        <div class="h-4 bg-gray-200 rounded w-2/3 mb-3"></div>
+      </div>
+    </article>
+
+    <div class="mt-10 text-center">
+      <a href="/" class="btn-primary text-white px-8 py-3 rounded-full font-medium inline-block">← 返回首页，发现更多AI工具</a>
+    </div>
+  </main>
+
+  <footer class="bg-gray-900 text-gray-400 py-8 text-center text-sm">
+    <p>&copy; 2026 AI创作工具导航. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const articles = [
+      {
+        slug: 'chatgpt-guide',
+        title: 'ChatGPT完全入门指南：从注册到精通',
+        date: '2026-07-25',
+        category: 'AI写作',
+        excerpt: '手把手教你注册和使用ChatGPT，包含10个实用技巧...',
+        content: `
+          <p>ChatGPT是目前最强大的AI对话模型，由OpenAI开发。无论你是学生、上班族还是创业者，掌握ChatGPT都能极大提升你的工作和学习效率。</p>
+
+          <h2>一、ChatGPT是什么？</h2>
+          <p>ChatGPT是基于GPT-4架构的大型语言模型，能够理解和生成自然语言文本。它可以帮你写文章、翻译、写代码、解答问题、头脑风暴等等。</p>
+
+          <div class="tip"><strong>核心优势：</strong>上下文理解能力强，支持多轮对话，回答质量高，是目前用户量最大的AI对话工具。</div>
+
+          <h2>二、如何注册ChatGPT？</h2>
+          <h3>1. 准备工作</h3>
+          <ul>
+            <li>科学上网工具（ChatGPT官网在国内无法直接访问）</li>
+            <li>一个邮箱（Gmail或Outlook最佳）</li>
+            <li>海外手机号（用于短信验证，可以通过接码平台解决）</li>
+          </ul>
+          <h3>2. 注册步骤</h3>
+          <ol>
+            <li>访问 <a href="https://chat.openai.com" target="_blank">chat.openai.com</a></li>
+            <li>点击「Sign up」用邮箱注册</li>
+            <li>验证邮箱后，输入手机号接收验证码</li>
+            <li>设置密码，完成注册</li>
+          </ol>
+
+          <h2>三、10个实用技巧</h2>
+          <h3>1. 明确角色设定</h3>
+          <p>开头告诉ChatGPT它是什么角色，效果提升巨大。例如："你是一位资深Python开发工程师..."</p>
+          <h3>2. 分步骤提问</h3>
+          <p>复杂任务拆分成多步提问，每步确认后再继续。不要一次塞太多指令。</p>
+          <h3>3. 提供示例</h3>
+          <p>给出1-2个你期望的输出示例，ChatGPT会模仿格式和风格。</p>
+          <h3>4. 使用结构化提示词</h3>
+          <p>用「背景+任务+要求+格式」四段式写提示词，输出更精准。</p>
+          <h3>5. 设定输出长度</h3>
+          <p>明确要求"用300字以内回答"或"列出5个要点"，控制输出量。</p>
+          <h3>6. 追问修正</h3>
+          <p>不满意就追问："请把第二部分展开"、"换一种更通俗的说法"。</p>
+          <h3>7. 巧用system prompt</h3>
+          <p>在设置里自定义系统提示词，让ChatGPT每次都按你的要求回答。</p>
+          <h3>8. 利用ChatGPT Plus</h3>
+          <p>每月20美元的Plus版可使用GPT-4、DALL-E绘图和联网搜索功能。</p>
+          <h3>9. 保存常用提示词</h3>
+          <p>把好用的提示词模板存起来，下次直接复制粘贴使用。</p>
+          <h3>10. 结合插件使用</h3>
+          <p>ChatGPT Plus支持插件市场，可以根据需求安装数据分析、网页浏览等插件。</p>
+
+          <h2>四、免费版 vs Plus版</h2>
+          <div class="warn"><strong>建议：</strong>日常使用免费版足够。如果你需要处理长文档、生成图片或需要更准确的回答，再考虑升级Plus。</div>
+
+          <h2>五、ChatGPT变现思路</h2>
+          <ul>
+            <li><strong>内容创作：</strong>辅助写公众号文章、小红书文案、短视频脚本</li>
+            <li><strong>编程辅助：</strong>快速生成代码、Debug、写技术文档</li>
+            <li><strong>翻译服务：</strong>中英互译质量远超传统翻译软件</li>
+            <li><strong>教育辅导：</strong>解题、备课、出试卷</li>
+          </ul>
+
+          <p><strong>总结：</strong>ChatGPT是2026年每个创作者必备的生产力工具。花1小时学会基本操作，每天至少能节省2-3小时的工作时间。</p>
+        `
+      },
+      {
+        slug: 'free-ai-tools',
+        title: '免费AI工具大盘点：不花一分钱也能用AI',
+        date: '2026-07-20',
+        category: '综合',
+        excerpt: '10款完全免费的AI工具推荐，涵盖写作、绘画、视频...',
+        content: `
+          <p>很多人以为好用的AI工具都要付费，其实不然。本文整理10款完全免费的AI工具，覆���写作、绘画、视频等热门领域。</p>
+
+          <h2>一、AI写作类</h2>
+          <h3>1. Claude（免费版）</h3>
+          <p>Anthropic开发，免费版支持200K tokens上下文，长文本处理能力业界最强。不用科学上网就能用。</p>
+          <h3>2. Kimi Chat</h3>
+          <p>月之暗面出品，国产良心AI。支持200万字超长上下文，可以上传PDF、Word直接分析。完全免费。</p>
+          <h3>3. 豆包</h3>
+          <p>字节跳动旗下，集成在抖音和飞书中。AI对话、写作、翻译都很出色，完全免费。</p>
+
+          <h2>二、AI绘画类</h2>
+          <h3>4. 通义万相</h3>
+          <p>阿里出品，免费AI绘画工具。中文理解好，画风多样，每天有免费额度。通过通义千问APP即可使用。</p>
+          <h3>5. Stable Diffusion（开源）</h3>
+          <p>完全开源的AI绘画模型，可以在自己电脑上免费运行。需要一定的技术基础来部署。</p>
+
+          <h2>三、AI视频类</h2>
+          <h3>6. 即梦</h3>
+          <p>字节跳动AI视频生成工具，每月有免费额度。文字生成视频、图片转视频效果都不错。</p>
+          <h3>7. 可灵</h3>
+          <p>快手出品，AI视频生成工具。支持文生视频和图生视频，新用户有免费试用额度。</p>
+
+          <div class="tip"><strong>小贴士：</strong>很多付费AI工具的免费额度其实够日常使用。先试免费版，够用就别急着付费。</div>
+
+          <h2>四、其他实用免费工具</h2>
+          <h3>8. Perplexity</h3>
+          <p>AI搜索引擎，免费版支持联网搜索和来源引用。比传统搜索更智能，比ChatGPT更新鲜。</p>
+          <h3>9. Gemini</h3>
+          <p>Google出品，免费版功能强大。多模态理解能力出色，支持文字、图片、视频输入。Gemini 2.0 Flash完全免费。</p>
+          <h3>10. DeepSeek</h3>
+          <p>国产开源大模型，性能媲美GPT-4，目前完全免费使用。支持Web端和App端。</p>
+
+          <h2>五、免费 vs 付费，怎么选？</h2>
+          <div class="warn"><strong>建议：</strong>先从免费工具入手，等真正跑通工作流，确实需要更高额度或更快速度时，再考虑付费。大多数创作者用免费版完全足够。</div>
+
+          <p><strong>总结：</strong>2026年免费AI工具的质量已经非常高了，不需要花一分钱就能建立完整的AI生产力体系。</p>
+        `
+      },
+      {
+        slug: 'ai-write-guide',
+        title: '用AI写公众号爆文：实操全流程拆解',
+        date: '2026-07-15',
+        category: 'AI写作',
+        excerpt: '从选题到发布，完整AI辅助写作流程，提高10倍效率...',
+        content: `
+          <p>用AI写公众号文章不是简单地让AI"帮我写一篇爆文"，而是有一套完整的协作流程。</p>
+
+          <h2>一、选题阶段：用AI找爆款选题</h2>
+          <p>让AI分析近期热点，生成选题建议：</p>
+          <blockquote>请根据最近一周的热点话题，结合「职场效率」领域，给我10个公众号选题，每个选题包含：标题、核心观点、目标读者。</blockquote>
+          <p>然后人工筛选出3个最有潜力的选题。</p>
+
+          <h2>二、大纲阶段：用AI搭文章骨架</h2>
+          <p>选定选题后，让AI生成详细大纲：</p>
+          <blockquote>请为选题「XXX」生成一篇2000字公众号文章的大纲，包含：开头钩子、3-4个小标题、每个部分的要点、结尾金句。</blockquote>
+
+          <h2>三、初稿阶段：分段让AI写作</h2>
+          <div class="tip"><strong>关键技巧：</strong>不要一次性让AI写全文。每个部分单独写，质量更高。每段写完后人工审核，调整语气和细节。</div>
+
+          <h2>四、优化阶段：AI+人工打磨</h2>
+          <ul>
+            <li><strong>标题优化：</strong>让AI生成20个标题变体，选最吸引人的</li>
+            <li><strong>开头优化：</strong>前3句话决定读者是否继续读，反复打磨</li>
+            <li><strong>排版优化：</strong>加粗重点，分段简短，配图恰当</li>
+            <li><strong>金句植入：</strong>让AI生成5个金句，散落在文章中</li>
+          </ul>
+
+          <h2>五、效率对比</h2>
+          <p>传统写作：一篇2000字文章需要4-6小时。AI辅助：1-1.5小时即可完成，效率提升4倍以上。</p>
+
+          <p><strong>核心原则：AI负责70%的「写」，你负责100%的「判断」。AI是笔，你是执笔的人。</strong></p>
+        `
+      },
+      {
+        slug: 'midjourney-prompts',
+        title: 'Midjourney提示词大全：100个高质量prompt',
+        date: '2026-07-22',
+        category: 'AI绘画',
+        excerpt: '整理100个实测好用的Midjourney提示词，涵盖各种风格...',
+        content: `
+          <p>Midjourney的出图质量高度依赖提示词。本文整理100个实测好用的Prompt，涵盖人像、风景、产品、插画等多种风格。</p>
+
+          <h2>一、提示词结构公式</h2>
+          <p>标准Midjourney提示词结构：<strong>主体 + 风格 + 细节 + 参数</strong></p>
+          <blockquote>例如：A young woman in a coffee shop, cinematic lighting, detailed facial features, Fujifilm style --ar 3:4 --v 6</blockquote>
+
+          <h2>二、人像摄影类（20个）</h2>
+          <h3>写实风格</h3>
+          <ul>
+            <li>A professional business portrait, natural window lighting, 85mm lens effect --ar 2:3</li>
+            <li>An elderly craftsman in workshop, Rembrandt lighting, detailed skin texture, Nikon style --ar 3:4</li>
+            <li>Street fashion photography, Tokyo street, dynamic pose, colorful outfit --ar 3:4</li>
+          </ul>
+
+          <h3>艺术风格</h3>
+          <ul>
+            <li>Oil painting portrait of a woman with flowers, classical style, soft brushstrokes --ar 2:3</li>
+            <li>Watercolor style portrait, dreamy atmosphere, pastel colors, floating elements --ar 3:4</li>
+          </ul>
+
+          <h2>三、风景建筑类（20个）</h2>
+          <ul>
+            <li>A futuristic city skyline at sunset, cyberpunk style, neon lights, rain --ar 16:9</li>
+            <li>Japanese zen garden, cherry blossoms, morning mist, calm atmosphere --ar 16:9</li>
+            <li>Ancient castle on a cliff, dramatic sky, fantasy art style --ar 16:9</li>
+            <li>Nordic minimalist interior, natural wood, bright daylight, hygge style --ar 4:3</li>
+          </ul>
+
+          <h2>四、产品设计类（20个）</h2>
+          <ul>
+            <li>Minimalist smartphone product shot, white background, studio lighting, Apple style</li>
+            <li>Perfume bottle, luxury packaging, gold accents, marble surface, 3D render style</li>
+            <li>Sneakers product photography, dynamic angle, neon lighting, street style</li>
+          </ul>
+
+          <h2>五、插画/概念艺术类（20个）</h2>
+          <ul>
+            <li>Cute animal characters, childrens book illustration style, soft pastel colors</li>
+            <li>Flat vector illustration of business concept, clean lines, vibrant colors, corporate style</li>
+            <li>Steampunk mechanical dragon, detailed gears and brass, concept art --ar 16:9</li>
+            <li>Anime style warrior, dynamic action pose, energy effects, Studio Ghibli influence</li>
+          </ul>
+
+          <h2>六、常用参数速查</h2>
+          <ul>
+            <li><code>--ar 1:1</code> 正方形（头像/图标）</li>
+            <li><code>--ar 3:4</code> 竖版（手机壁纸/小红书）</li>
+            <li><code>--ar 16:9</code> 横版（封面/视频）</li>
+            <li><code>--v 6</code> 使用最新的V6模型</li>
+            <li><code>--s 250</code> 风格化程度（0-1000，越高越艺术化）</li>
+            <li><code>--q 2</code> 高质量渲染（耗更多GPU分钟）</li>
+          </ul>
+
+          <div class="tip"><strong>最佳实践：</strong>先用简单提示词看效果，再逐步添加风格和参数。不要一上来就写很长的提示词。</div>
+
+          <p><strong>总结：</strong>好的提示词 = 清晰的主体 + 明确的风格 + 精准的参数。多试多练，你会越来越懂Midjourney的"语言"。</p>
+        `
+      },
+      {
+        slug: 'ai-video-compare',
+        title: 'AI视频生成哪家强？Runway vs Pika实测对比',
+        date: '2026-07-18',
+        category: 'AI视频',
+        excerpt: '实测对比主流AI视频生成工具，告诉你哪个更适合你...',
+        content: `
+          <p>本文实测对比Runway和Pika两款主流AI视频生成工具，帮你选择最适合的。</p>
+
+          <h2>一、快速对比表</h2>
+          <ul>
+            <li><strong>Runway：</strong>功能全面，视频质量高，支持编辑，付费版¥150/月起</li>
+            <li><strong>Pika：</strong>操作简单，上手快，适合短视频，免费版可用</li>
+          </ul>
+
+          <h2>二、Runway详细测评</h2>
+          <h3>优点</h3>
+          <ul>
+            <li>Gen-2模型生成的视频质量行业领先</li>
+            <li>集成了视频编辑、抠像、调色等完整工具链</li>
+            <li>支持文字转视频、图片转视频、视频转视频</li>
+            <li>有桌面端应用，离线也可用</li>
+          </ul>
+          <h3>缺点</h3>
+          <ul>
+            <li>价格较贵，月费¥150起</li>
+            <li>生成速度较慢，一个5秒视频约需2-3分钟</li>
+            <li>中文提示词理解能力一般</li>
+          </ul>
+
+          <h2>三、Pika详细测评</h2>
+          <h3>优点</h3>
+          <ul>
+            <li>界面极简，3步就能生成视频</li>
+            <li>免费版每天有多次生成额度</li>
+            <li>支持文字和图片转视频</li>
+            <li>社区活跃，有很多模板可以套用</li>
+          </ul>
+          <h3>缺点</h3>
+          <ul>
+            <li>视频时长较短（通常3-5秒）</li>
+            <li>长时间视频连贯性较差</li>
+            <li>高级编辑功能不如Runway</li>
+          </ul>
+
+          <h2>四、使用场景推荐</h2>
+          <div class="tip">
+            <strong>选Runway如果：</strong>你需要高质量商业视频，愿意付费，需要完整编辑工具链。<br><br>
+            <strong>选Pika如果：</strong>你刚开始尝试AI视频，预算有限，主要做短视频/社交媒体内容。
+          </div>
+
+          <h2>五、实操对比</h2>
+          <p>用同样提示词测试：<em>"一只猫在城市屋顶上行走，落日背景，电影质感"</em></p>
+          <p><strong>Runway：</strong>画面质感好，光影真实，猫的动作自然，但生成耗时2分10秒。</p>
+          <p><strong>Pika：</strong>生成仅45秒，画面风格讨喜偏卡通，但猫的动作有些机械感。</p>
+
+          <p><strong>结论：</strong>新手推荐Pika入门，专业需求选Runway。两款工具各有千秋，可以根据具体项目组合使用。</p>
+        `
+      },
+      {
+        slug: 'notion-ai-review',
+        title: 'Notion AI深度测评：值不值得每月多花70元？',
+        date: '2026-07-12',
+        category: 'AI写作',
+        excerpt: '详细体验Notion AI的所有功能，告诉你是否值得付费...',
+        content: `
+          <p>Notion AI是内嵌在Notion中的AI助手，每月额外付费约70元。它到底值不值？</p>
+
+          <h2>一、Notion AI能做什么？</h2>
+          <ul>
+            <li><strong>写作辅助：</strong>续写、改写、翻译、总结</li>
+            <li><strong>内容生成：</strong>会议议程、项目计划、周报</li>
+            <li><strong>信息提取：</strong>从长文中提取要点、生成摘要</li>
+            <li><strong>头脑风暴：</strong>生成创意、优缺点分析</li>
+          </ul>
+
+          <h2>二、优点</h2>
+          <ul>
+            <li>深度集成Notion，无需切换工具</li>
+            <li>直接操作数据库内容，AI可读写Notion页面</li>
+            <li>中英文支持都不错</li>
+            <li>团队功能完善，多人协作时可共享AI能力</li>
+          </ul>
+
+          <h2>三、缺点</h2>
+          <ul>
+            <li>写作质量不如ChatGPT-4和Claude</li>
+            <li>不能联网搜索实时信息</li>
+            <li>必须在Notion内使用，无法独立运行</li>
+            <li>月费¥70偏贵，性价比一般</li>
+          </ul>
+
+          <h2>四、值不值得买？</h2>
+          <div class="warn">
+            <strong>值得买：</strong>你重度使用Notion（每天3小时以上），且主要需求是会议纪要、文档整理、数据库操作等Notion原生场景。<br><br>
+            <strong>不值得买：</strong>你只是偶尔用Notion，或主要需求是一般性的AI写作/翻译，那不如用免费的Claude或Kimi。
+          </div>
+
+          <h2>五、替代方案</h2>
+          <p>如果你只是为了AI写作功能：</p>
+          <ul>
+            <li>免费替代：Claude（200K上下文，中英文优秀）</li>
+            <li>国产替代：Kimi（200万字长文本，完全免费）</li>
+            <li>预算替代：ChatGPT Plus（每月¥140，但功能更强大）</li>
+          </ul>
+
+          <p><strong>结论：</strong>Notion AI是Notion重度用户的锦上添花，不是AI写作的最佳选择。先问问自己：我到底需要AI帮我做什么？</p>
+        `
+      }
+    ];
+
+    const params = new URLSearchParams(window.location.search);
+    const slug = params.get('slug') || 'chatgpt-guide';
+    const article = articles.find(a => a.slug === slug) || articles[0];
+
+    document.title = article.title + ' - AI创作工具导航';
+    document.querySelector('meta[name="description"]').content = article.excerpt;
+
+    document.getElementById('articleContent').innerHTML = `
+      <span class="text-xs text-purple-600 font-medium bg-purple-50 px-2 py-1 rounded">${article.category}</span>
+      <h1 class="text-3xl font-bold mt-4 mb-3 gradient-text">${article.title}</h1>
+      <p class="text-sm text-gray-400 mb-8">发布于 ${article.date} · AI创作工具导航</p>
+      ${article.content}
+    `;
+  </script>
+</body>
+</html>
