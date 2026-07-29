@@ -156,7 +156,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   window.handleSearch = function() {
     const q = (document.getElementById('searchInput')||{}).value||'';
     const resultsDiv = document.getElementById('searchResults');
-    if (!q || q.length < 2) { resultsDiv.classList.add('hidden'); return; }
+    if (!q || q.length < 1) { resultsDiv.classList.add('hidden'); return; }
     const matched = tools.filter(t =>
       t.name.toLowerCase().includes(q.toLowerCase()) ||
       t.description.includes(q) ||
