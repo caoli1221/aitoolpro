@@ -178,3 +178,10 @@ document.addEventListener('DOMContentLoaded', async () => {
         '</a>'
       ).join('') + '</div>';
   };
+
+  const searchInput = document.getElementById('searchInput');
+  if (searchInput) {
+    searchInput.addEventListener('input', window.handleSearch);
+    searchInput.addEventListener('focus', window.handleSearch);
+  }
+});
