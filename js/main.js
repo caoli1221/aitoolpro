@@ -76,7 +76,16 @@ document.addEventListener('DOMContentLoaded', async () => {
     { slug: 'ai-presentation', title: 'AI做PPT最强攻略：Gamma、Beautiful.ai、WPS AI横评', excerpt: '三款AI PPT工具实测，帮你找到最高效的演示制作方式...', date: '2026-07-05', category: 'AI办公' },
     { slug: 'heygen-guide', title: 'HeyGen数字人完全指南：零基础做出专业视频', excerpt: '从创建数字人到生成视频，完整操作流程和高级技巧...', date: '2026-07-02', category: 'AI营销' },
     { slug: 'perplexity-guide', title: 'Perplexity深度使用指南：比Google好用10倍的AI搜索', excerpt: 'AI搜索引擎的正确打开方式，学术研究和工作利器...', date: '2026-06-28', category: 'AI搜索' },
-    { slug: 'cursor-tutorial', title: 'Cursor零基础教程：用AI写代码的正确姿势', excerpt: '从安装到精通，AI编程神器Cursor的完整上手路线图...', date: '2026-06-25', category: 'AI编程' }
+    { slug: 'cursor-tutorial', title: 'Cursor零基础教程：用AI写代码的正确姿势', excerpt: '从安装到精通，AI编程神器Cursor的完整上手路线图...', date: '2026-06-25', category: 'AI编程' },
+    { slug: 'deepseek-guide', title: 'DeepSeek完全指南：国产最强开源大模型上手体验', excerpt: 'DeepSeek注册、使用技巧和最强功能解析，免费又好用...', date: '2026-07-27', category: 'AI写作' },
+    { slug: 'kling-video-tips', title: '可灵AI视频进阶技巧：从入门到出爆款', excerpt: '可灵AI高阶提示词技巧，教你生成电影级AI视频...', date: '2026-07-26', category: 'AI视频' },
+    { slug: 'ai-design-tools', title: '2026年AI设计工具推荐：平面/UI/电商全覆盖', excerpt: '盘点最好的AI设计工具，Remove.bg、Canva、Photoroom等实测...', date: '2026-07-24', category: 'AI设计' },
+    { slug: 'ai-office-revolution', title: 'AI如何改变办公方式：6款效率神器实测', excerpt: 'WPS AI、Notion AI、Gamma等AI办公工具深度体验报告...', date: '2026-07-21', category: 'AI办公' },
+    { slug: 'stable-diffusion-guide', title: 'Stable Diffusion新手入门：从安装到出图全流程', excerpt: 'SD本地部署教程、模型推荐和提示词技巧，免费AI绘画利器...', date: '2026-07-19', category: 'AI绘画' },
+    { slug: 'ai-earn-money', title: '2026年用AI赚钱的10种方法：副业实操指南', excerpt: '从AI绘画接单到自媒体运营，10种已验证的AI变现方式...', date: '2026-07-17', category: '综合' },
+    { slug: 'elevenlabs-tutorial', title: 'ElevenLabs语音克隆教程：3分钟复刻你的声音', excerpt: 'AI语音合成神器ElevenLabs完整使用指南，附中文配音技巧...', date: '2026-07-14', category: 'AI音频' },
+    { slug: 'ai-seo-tools', title: 'AI+SEO：用AI工具做内容排名的完整工作流', excerpt: '从关键词研究到AI写文章再到排名监控，全流程拆解...', date: '2026-07-11', category: '综合' },
+    { slug: 'remove-bg-guide', title: 'Remove.bg vs Photoroom：电商抠图工具对比', excerpt: '两款AI抠图神器横向测评，电商卖家必看的选型指南...', date: '2026-07-09', category: 'AI设计' }
   ];
 
   categories.forEach(cat => {
@@ -133,13 +142,39 @@ document.addEventListener('DOMContentLoaded', async () => {
   });
 });
 
-window.filterByCategory = function(categoryId) {
-  document.querySelectorAll('.tool-card').forEach(card => {
-    if (card.dataset.category === categoryId) {
-      card.style.display = 'block';
-    } else {
-      card.style.display = 'none';
+  window.filterByCategory = function(categoryId) {
+    document.querySelectorAll('.tool-card').forEach(card => {
+      if (card.dataset.category === categoryId) {
+        card.style.display = 'block';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+    document.getElementById('featured').scrollIntoView({ behavior: 'smooth' });
+  };
+
+  window.handleSearch = function() {
+    const q = (document.getElementById('searchInput')||{}).value||'';
+    const resultsDiv = document.getElementById('searchResults');
+    if (!q || q.length < 2) { resultsDiv.classList.add('hidden'); return; }
+    const matched = tools.filter(t =>
+      t.name.toLowerCase().includes(q.toLowerCase()) ||
+      t.description.includes(q) ||
+      (categories.find(c=>c.id===t.category)||{}).name.includes(q)
+    );
+    if (matched.length === 0) {
+      resultsDiv.classList.remove('hidden');
+      resultsDiv.innerHTML = '<div class="bg-white rounded-xl p-4 text-gray-400 text-center text-sm">未找到匹配工具，换个关键词试试</div>';
+      return;
     }
-  });
-  document.getElementById('featured').scrollIntoView({ behavior: 'smooth' });
-};
+    resultsDiv.classList.remove('hidden');
+    resultsDiv.innerHTML = '<div class="bg-white rounded-xl shadow-lg border border-gray-100 p-2 max-h-80 overflow-y-auto">' +
+      matched.map(t =>
+        '<a href="pages/tool.html?id='+t.id+'" class="flex items-center gap-3 p-3 hover:bg-gray-50 rounded-lg transition">' +
+          '<span class="text-2xl">'+t.icon+'</span>' +
+          '<div class="flex-1"><div class="font-medium text-gray-900">'+t.name+'</div><div class="text-xs text-gray-500">'+t.description+'</div></div>' +
+          '<span class="text-xs bg-purple-50 text-purple-600 px-2 py-1 rounded">'+(categories.find(c=>c.id===t.category)||{}).name+'</span>' +
+          renderStars(t.rating) +
+        '</a>'
+      ).join('') + '</div>';
+  };
