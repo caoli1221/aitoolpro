@@ -140,7 +140,6 @@ document.addEventListener('DOMContentLoaded', async () => {
         '</div>' +
       '</div>';
   });
-});
 
   window.filterByCategory = function(categoryId) {
     document.querySelectorAll('.tool-card').forEach(card => {
@@ -179,9 +178,4 @@ document.addEventListener('DOMContentLoaded', async () => {
       ).join('') + '</div>';
   };
 
-  const searchInput = document.getElementById('searchInput');
-  if (searchInput) {
-    searchInput.addEventListener('input', window.handleSearch);
-    searchInput.addEventListener('focus', window.handleSearch);
-  }
 });
