@@ -107,7 +107,34 @@ const article = articles[slug];
 if (article) {
   document.title = article.title + ' | AI创作工具导航';
   document.getElementById('loading').style.display = 'none';
+
+  // Structured data for SEO
+  const ldJson = JSON.stringify({
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "首页", "item": "https://aitoolpro.cn/" },
+          { "@type": "ListItem", "position": 2, "name": article.category, "item": "https://aitoolpro.cn/pages/category-" + (article.category==='AI写作'?'writing':article.category==='AI绘画'?'drawing':article.category==='AI视频'?'video':'writing') + ".html" },
+          { "@type": "ListItem", "position": 3, "name": article.title }
+        ]
+      },
+      {
+        "@type": "Article",
+        "headline": article.title,
+        "description": article.meta,
+        "datePublished": article.date,
+        "dateModified": article.date,
+        "author": { "@type": "Organization", "name": "AI创作工具导航" },
+        "publisher": { "@type": "Organization", "name": "AI创作工具导航", "url": "https://aitoolpro.cn" },
+        "mainEntityOfPage": { "@type": "WebPage", "@id": window.location.href }
+      }
+    ]
+  });
+
   document.getElementById('article-content').innerHTML =
+    '<script type="application/ld+json">' + ldJson + '<\/script>' +
     '<article class="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">' +
       '<span class="text-sm text-purple-600 bg-purple-50 px-3 py-1 rounded-full">' + article.category + '</span>' +
       '<h1 class="text-3xl font-bold text-gray-900 mt-4 mb-2">' + article.title + '</h1>' +
@@ -124,3 +151,4 @@ if (article) {
 <script src="../js/ads.js"></script>
 </body>
 </html>
+
