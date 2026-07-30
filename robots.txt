@@ -2,3 +2,9 @@ User-agent: *
 Allow: /
 
 Sitemap: https://aitoolpro.cn/sitemap.xml
+
+User-agent: Baiduspider
+Allow: /
+Crawl-delay: 1
+
+Disallow: /js/ads.js
