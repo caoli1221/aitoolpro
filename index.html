@@ -1,156 +1,156 @@
-<!-- cv2 -->
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI创作工具导航 - 精选最好用的AI工具推荐 | 2026最新</title>
-  <meta name="description" content="精选最好用的AI创作工具推荐。覆盖AI写作、AI绘画、AI视频生成等领域，真实测评，帮你找到最适合的AI工具。">
-  <meta name="keywords" content="AI工具,AI写作,AI绘画,AI视频,ChatGPT,Midjourney,AI导航,人工智能工具">
-  <meta name="baidu_union_verify" content="9f4c6738f3eef36ca8bc87f9c4aadcc1">
-  <link rel="canonical" href="https://aitoolpro.cn/">
-  <meta property="og:title" content="AI创作工具导航 - 精选最好用的AI工具推荐">
-  <meta property="og:description" content="精选最好用的AI创作工具推荐。真实测评，帮你找到最适合的AI工具。">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://aitoolpro.cn/">
-  <script>var _hmt=_hmt||[];(function(){var hm=document.createElement("script");hm.src="https://hm.baidu.com/hm.js?7c7c3830754db3a587a2aaac441a6317";var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(hm,s)})();</script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "AI创作工具导航",
-    "url": "https://aitoolpro.cn",
-    "description": "精选最好用的AI创作工具推荐，覆盖AI写作、绘画、视频、编程等领域，真实测评帮你找到最适合的AI工具",
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": "https://aitoolpro.cn/?q={search_term_string}",
-      "query-input": "required name=search_term_string"
-    }
-  }
-  </script>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap');
-    * { font-family: 'Noto Sans SC', 'Inter', sans-serif; }
-    .gradient-text { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-    .card-hover { transition: transform 0.2s ease, box-shadow 0.2s ease; }
-    .card-hover:hover { transform: translateY(-4px); box-shadow: 0 12px 24px rgba(0,0,0,0.1); }
-    .btn-primary { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); transition: opacity 0.2s; }
-    .btn-primary:hover { opacity: 0.9; }
-    .ad-container { transition: opacity 0.3s; }
-    .ad-container:hover { opacity: 0.9; }
-  </style>
-</head>
-<body class="bg-gray-50 text-gray-900">
-  <nav class="bg-white shadow-sm sticky top-0 z-50">
-    <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
-      <a href="/" class="text-xl font-bold gradient-text">AI创作工具导航</a>
-      <div class="hidden md:flex space-x-6 text-sm font-medium text-gray-600">
-        <a href="/" class="hover:text-purple-600">首页</a>
-        <a href="#categories" class="hover:text-purple-600">分类</a>
-        <a href="#featured" class="hover:text-purple-600">精选推荐</a>
-        <a href="#articles" class="hover:text-purple-600">使用教程</a>
-      </div>
-    </div>
-  </nav>
-
-  <!-- 广告位：首页顶部横幅 970x90 -->
-  <div data-ad-slot="ad-home-top"></div>
-
-  <header class="bg-gradient-to-br from-purple-50 via-white to-blue-50 py-20">
-    <div class="max-w-6xl mx-auto px-4 text-center">
-      <h1 class="text-4xl md:text-5xl font-bold mb-6">
-        找到最适合你的 <span class="gradient-text">AI创作工具</span>
-      </h1>
-      <p class="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
-        我们精选并实测了上百款AI工具，涵盖写作、绘画、视频、音频等领域。<br>真实测评，帮你节省时间，找到真正好用的工具。
-      </p>
-      <div class="max-w-xl mx-auto mb-6 relative">
-        <input type="text" id="searchInput" placeholder="搜索AI工具名称、功能描述..." 
-          class="w-full px-6 py-4 rounded-full border-2 border-purple-200 focus:border-purple-400 focus:outline-none text-lg shadow-lg"
-          oninput="handleSearch()">
-        <div class="absolute right-4 top-1/2 -translate-y-1/2 text-purple-400 text-xl">🔍</div>
-      </div>
-      <div id="searchResults" class="max-w-2xl mx-auto mb-4 hidden"></div>
-      <div class="flex justify-center gap-4">
-        <a href="#categories" class="btn-primary text-white px-8 py-3 rounded-full font-medium text-lg">开始探索</a>
-        <a href="#articles" class="bg-white text-purple-600 border border-purple-200 px-8 py-3 rounded-full font-medium text-lg hover:bg-purple-50">查看教程</a>
-      </div>
-    </div>
-  </header>
-
-  <section id="categories" class="py-16">
-    <div class="max-w-6xl mx-auto px-4">
-      <h2 class="text-2xl font-bold text-center mb-10">按类别浏览</h2>
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-4" id="categoryGrid">
-      </div>
-    </div>
-  </section>
-
-  <!-- 广告位：分类区与精选推荐之间 -->
-  <div data-ad-slot="ad-home-mid-1"></div>
-
-  <section id="featured" class="py-16 bg-white">
-    <div class="max-w-6xl mx-auto px-4">
-      <h2 class="text-2xl font-bold text-center mb-10">精选推荐</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="featuredGrid">
-      </div>
-    </div>
-  </section>
-
-  <!-- 广告位：精选推荐与教程之间 -->
-  <div data-ad-slot="ad-home-mid-2"></div>
-
-  <section id="articles" class="py-16">
-    <div class="max-w-6xl mx-auto px-4">
-      <h2 class="text-2xl font-bold text-center mb-10">最新使用教程</h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6" id="articlesGrid">
-      </div>
-    </div>
-  </section>
-
-  <!-- 广告位：教程区底部 -->
-  <div data-ad-slot="ad-home-bottom"></div>
-
-  <section class="py-16 bg-gradient-to-br from-purple-600 to-indigo-700 text-white text-center">
-    <div class="max-w-2xl mx-auto px-4">
-      <h2 class="text-2xl font-bold mb-4">每周更新最新AI工具测评</h2>
-      <p class="text-purple-100 mb-6">关注我们，不错过任何一款好用的AI工具。</p>
-      <div class="flex justify-center gap-4">
-        <a href="https://www.zhihu.com" target="_blank" class="bg-white text-purple-700 px-6 py-3 rounded-full font-medium hover:bg-purple-50">关注知乎</a>
-        <a href="https://www.xiaohongshu.com" target="_blank" class="border border-white text-white px-6 py-3 rounded-full font-medium hover:bg-white/10">关注小红书</a>
-      </div>
-    </div>
-  </section>
-
-  <footer class="bg-gray-900 text-gray-400 py-12">
-    <div class="max-w-6xl mx-auto px-4">
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div>
-          <h3 class="text-white font-bold text-lg mb-3">AI创作工具导航</h3>
-          <p class="text-sm">精选最好用的AI工具，帮助创作者提升效率。</p>
-        </div>
-        <div>
-          <h3 class="text-white font-bold mb-3">快速链接</h3>
-          <ul class="text-sm space-y-2">
-            <li><a href="/" class="hover:text-white">首页</a></li>
-            <li><a href="#categories" class="hover:text-white">工具分类</a></li>
-            <li><a href="#articles" class="hover:text-white">使用教程</a></li>
-          </ul>
-        </div>
-        <div>
-          <h3 class="text-white font-bold mb-3">声明</h3>
-          <p class="text-sm">部分链接为推广链接，通过本站购买可能获得佣金，但不影响你的购买价格。</p>
-        </div>
-      </div>
-      <div class="border-t border-gray-800 mt-8 pt-6 text-center text-sm">
-        <p>&copy; 2026 AI创作工具导航. All rights reserved. | <a href="https://beian.miit.gov.cn/" target="_blank" class="hover:text-white">备案号待添加</a></p>
-      </div>
-    </div>
-  </footer>
-
-  <script src="js/main.js"></script>
-  <script src="js/ads.js"></script>
-</body>
-</html>
-
+<!-- cv2 -->
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI创作工具导航 - 精选最好用的AI工具推荐 | 2026最新</title>
+  <meta name="description" content="精选最好用的AI创作工具推荐。覆盖AI写作、AI绘画、AI视频生成等领域，真实测评，帮你找到最适合的AI工具。">
+  <meta name="keywords" content="AI工具,AI写作,AI绘画,AI视频,ChatGPT,Midjourney,AI导航,人工智能工具">
+  <meta name="baidu_union_verify" content="9f4c6738f3eef36ca8bc87f9c4aadcc1">
+  <link rel="canonical" href="https://aitoolpro.cn/">
+  <meta property="og:title" content="AI创作工具导航 - 精选最好用的AI工具推荐">
+  <meta property="og:description" content="精选最好用的AI创作工具推荐。真实测评，帮你找到最适合的AI工具。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aitoolpro.cn/">
+  <script>var _hmt=_hmt||[];(function(){var hm=document.createElement("script");hm.src="https://hm.baidu.com/hm.js?bbab59f46c0ec3415b3d28f9dde270b6";var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(hm,s)})();</script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "AI创作工具导航",
+    "url": "https://aitoolpro.cn",
+    "description": "精选最好用的AI创作工具推荐，覆盖AI写作、绘画、视频、编程等领域，真实测评帮你找到最适合的AI工具",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://aitoolpro.cn/?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap');
+    * { font-family: 'Noto Sans SC', 'Inter', sans-serif; }
+    .gradient-text { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .card-hover { transition: transform 0.2s ease, box-shadow 0.2s ease; }
+    .card-hover:hover { transform: translateY(-4px); box-shadow: 0 12px 24px rgba(0,0,0,0.1); }
+    .btn-primary { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); transition: opacity 0.2s; }
+    .btn-primary:hover { opacity: 0.9; }
+    .ad-container { transition: opacity 0.3s; }
+    .ad-container:hover { opacity: 0.9; }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-900">
+  <nav class="bg-white shadow-sm sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+      <a href="/" class="text-xl font-bold gradient-text">AI创作工具导航</a>
+      <div class="hidden md:flex space-x-6 text-sm font-medium text-gray-600">
+        <a href="/" class="hover:text-purple-600">首页</a>
+        <a href="#categories" class="hover:text-purple-600">分类</a>
+        <a href="#featured" class="hover:text-purple-600">精选推荐</a>
+        <a href="#articles" class="hover:text-purple-600">使用教程</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- 广告位：首页顶部横幅 970x90 -->
+  <div data-ad-slot="ad-home-top"></div>
+
+  <header class="bg-gradient-to-br from-purple-50 via-white to-blue-50 py-20">
+    <div class="max-w-6xl mx-auto px-4 text-center">
+      <h1 class="text-4xl md:text-5xl font-bold mb-6">
+        找到最适合你的 <span class="gradient-text">AI创作工具</span>
+      </h1>
+      <p class="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+        我们精选并实测了上百款AI工具，涵盖写作、绘画、视频、音频等领域。<br>真实测评，帮你节省时间，找到真正好用的工具。
+      </p>
+      <div class="max-w-xl mx-auto mb-6 relative">
+        <input type="text" id="searchInput" placeholder="搜索AI工具名称、功能描述..." 
+          class="w-full px-6 py-4 rounded-full border-2 border-purple-200 focus:border-purple-400 focus:outline-none text-lg shadow-lg"
+          oninput="handleSearch()">
+        <div class="absolute right-4 top-1/2 -translate-y-1/2 text-purple-400 text-xl">🔍</div>
+      </div>
+      <div id="searchResults" class="max-w-2xl mx-auto mb-4 hidden"></div>
+      <div class="flex justify-center gap-4">
+        <a href="#categories" class="btn-primary text-white px-8 py-3 rounded-full font-medium text-lg">开始探索</a>
+        <a href="#articles" class="bg-white text-purple-600 border border-purple-200 px-8 py-3 rounded-full font-medium text-lg hover:bg-purple-50">查看教程</a>
+      </div>
+    </div>
+  </header>
+
+  <section id="categories" class="py-16">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-2xl font-bold text-center mb-10">按类别浏览</h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4" id="categoryGrid">
+      </div>
+    </div>
+  </section>
+
+  <!-- 广告位：分类区与精选推荐之间 -->
+  <div data-ad-slot="ad-home-mid-1"></div>
+
+  <section id="featured" class="py-16 bg-white">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-2xl font-bold text-center mb-10">精选推荐</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="featuredGrid">
+      </div>
+    </div>
+  </section>
+
+  <!-- 广告位：精选推荐与教程之间 -->
+  <div data-ad-slot="ad-home-mid-2"></div>
+
+  <section id="articles" class="py-16">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-2xl font-bold text-center mb-10">最新使用教程</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6" id="articlesGrid">
+      </div>
+    </div>
+  </section>
+
+  <!-- 广告位：教程区底部 -->
+  <div data-ad-slot="ad-home-bottom"></div>
+
+  <section class="py-16 bg-gradient-to-br from-purple-600 to-indigo-700 text-white text-center">
+    <div class="max-w-2xl mx-auto px-4">
+      <h2 class="text-2xl font-bold mb-4">每周更新最新AI工具测评</h2>
+      <p class="text-purple-100 mb-6">关注我们，不错过任何一款好用的AI工具。</p>
+      <div class="flex justify-center gap-4">
+        <a href="https://www.zhihu.com" target="_blank" class="bg-white text-purple-700 px-6 py-3 rounded-full font-medium hover:bg-purple-50">关注知乎</a>
+        <a href="https://www.xiaohongshu.com" target="_blank" class="border border-white text-white px-6 py-3 rounded-full font-medium hover:bg-white/10">关注小红书</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-gray-900 text-gray-400 py-12">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div>
+          <h3 class="text-white font-bold text-lg mb-3">AI创作工具导航</h3>
+          <p class="text-sm">精选最好用的AI工具，帮助创作者提升效率。</p>
+        </div>
+        <div>
+          <h3 class="text-white font-bold mb-3">快速链接</h3>
+          <ul class="text-sm space-y-2">
+            <li><a href="/" class="hover:text-white">首页</a></li>
+            <li><a href="#categories" class="hover:text-white">工具分类</a></li>
+            <li><a href="#articles" class="hover:text-white">使用教程</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-white font-bold mb-3">声明</h3>
+          <p class="text-sm">部分链接为推广链接，通过本站购买可能获得佣金，但不影响你的购买价格。</p>
+        </div>
+      </div>
+      <div class="border-t border-gray-800 mt-8 pt-6 text-center text-sm">
+        <p>&copy; 2026 AI创作工具导航. All rights reserved. | <a href="https://beian.miit.gov.cn/" target="_blank" class="hover:text-white">备案号待添加</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/ads.js"></script>
+</body>
+</html>
+
