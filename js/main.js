@@ -98,7 +98,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     { id: 'stepfun', name: '\u9636\u8DC3\u661F\u8FB0', category: 'ai-writing', icon: '\u{2B50}', description: '\u6B65\u6B65\u9AD8\u51FA\u54C1\uFF0C\u591A\u6A21\u6001\u5927\u6A21\u578B', rating: 4.1, featured: false, url: 'https://platform.stepfun.com' },
     { id: 'sora', name: 'Sora', category: 'ai-video', icon: '\u{1F31F}', description: 'OpenAI\u89C6\u9891\u751F\u6210\uFF0C\u8D28\u91CF\u60CA\u8273\u4E1A\u754C\u6807\u6746', rating: 4.7, featured: true, url: 'https://sora.com' },
     { id: 'veo', name: 'Veo', category: 'ai-video', icon: '\u{1F3A5}', description: 'Google DeepMind\u89C6\u9891\u751F\u6210\uFF0C\u753B\u8D28\u6781\u4F73', rating: 4.5, featured: false, url: 'https://deepmind.google/technologies/veo' },
-    { id: 'pollo', name: 'Pollo AI', category: 'ai-video', icon: '\u{1F3AC}', description: '\u56FD\u4EA7\u89C6\u9891\u751F\u6210\u65B0\u79C0\uFF0C\u4E00\u952E\u6587\u751F\u89C6\u9891', rating: 4.0, featured: false, url: 'https://pollo.ai' }
+    { id: 'pollo', name: 'Pollo AI', category: 'ai-video', icon: '\u{1F3AC}', description: '\u56FD\u4EA7\u89C6\u9891\u751F\u6210\u65B0\u79C0\uFF0C\u4E00\u952E\u6587\u751F\u89C6\u9891', rating: 4.0, featured: false, url: 'https://pollo.ai' },
+    { id: '360ai', name: '360\u667A\u8111', category: 'ai-writing', icon: '\u{1F6E1}', description: '360\u51FA\u54C1\uFF0C\u5168\u7F51\u641C\u7D22+AI\u804A\u5929\u878D\u5408', rating: 4.1, featured: false, url: 'https://ai.360.com' }
   ];
 
   const categories = [
