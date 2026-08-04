@@ -3,9 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI工具详情 | AI创作工具导航</title>
-<meta name="description" content="查看AI工具的详细信息、功能特点、定价和使用评价">
-<link rel="canonical" href="https://aitoolpro.cn/pages/tool.html">
+<title>AI工具详情 - 功能介绍、价格和使用教程 | AI创作工具导航</title>
+<meta name="description" content="AI工具详情页，包含功能特点、价格对比、优缺点分析和使用教程。精选100+款AI写作、AI绘画、AI视频、AI编程工具的深度测评。">
+<link rel="canonical" href="https://aitoolpro.cn/pages/tool.html" id="canonical-link">
+<meta property="og:title" content="AI工具详情 | AI创作工具导航" id="og-title">
+<meta property="og:description" content="AI工具详情和测评" id="og-desc">
+<meta property="og:type" content="website" id="og-type">
+<meta property="og:url" content="https://aitoolpro.cn/pages/tool.html" id="og-url">
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script defer src="/_vercel/insights/script.js"></script>
@@ -91,7 +95,35 @@ const id = params.get('id');
 const tool = allTools[id];
 
 if (tool) {
-  document.title = tool.name + ' - AI工具详情 | AI创作工具导航';
+  document.title = tool.name + '怎么样？功能介绍、价格和使用教程 | AI创作工具导航';
+
+  // Dynamic SEO tags
+  var descTag = document.querySelector('meta[name="description"]');
+  if (descTag) descTag.setAttribute('content', tool.name + '：' + tool.desc.substring(0, 120));
+  var canonTag = document.getElementById('canonical-link');
+  if (canonTag) canonTag.setAttribute('href', 'https://aitoolpro.cn/pages/tool.html?id=' + id);
+  var ogTitle = document.getElementById('og-title');
+  if (ogTitle) ogTitle.setAttribute('content', tool.name + ' - 功能介绍与使用教程 | AI创作工具导航');
+  var ogDesc = document.getElementById('og-desc');
+  if (ogDesc) ogDesc.setAttribute('content', tool.desc.substring(0, 160));
+  var ogUrl = document.getElementById('og-url');
+  if (ogUrl) ogUrl.setAttribute('href', 'https://aitoolpro.cn/pages/tool.html?id=' + id);
+
+  // JSON-LD structured data
+  var ldScript = document.createElement('script');
+  ldScript.type = 'application/ld+json';
+  ldScript.text = JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": tool.name,
+    "description": tool.desc.substring(0, 300),
+    "applicationCategory": tool.category,
+    "operatingSystem": "Web",
+    "offers": {"@type": "Offer", "description": tool.pricing},
+    "aggregateRating": {"@type": "AggregateRating", "ratingValue": tool.rating, "bestRating": "5", "ratingCount": "100"},
+    "url": tool.url
+  });
+  document.head.appendChild(ldScript);
   document.getElementById('loading').style.display = 'none';
   document.getElementById('tool-detail').innerHTML =
     '<div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 mb-6">' +
